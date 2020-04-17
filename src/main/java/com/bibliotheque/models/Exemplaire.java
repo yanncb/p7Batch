@@ -13,6 +13,15 @@ public class Exemplaire {
     private boolean prolongerEmprunt;
 
     private Utilisateur utilisateur;
+    private Livre livre;
+
+    public Livre getLivre() {
+        return livre;
+    }
+
+    public void setLivre(Livre livre) {
+        this.livre = livre;
+    }
 
     private LocalDate dateRetour;
 
