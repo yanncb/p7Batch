@@ -12,7 +12,6 @@ public interface ProxyBatchToBack {
 
     @GetMapping(value = "/livres-en-retard")
     List<Livre>listeDeLivreDontLesExemplairesSontEnRetard();
-//    List<Exemplaire> listeDesExemplairesEnRetard();
 
 
 }

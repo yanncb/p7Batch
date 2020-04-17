@@ -25,15 +25,13 @@ public class BatchServiceImpl implements BatchService {
     public JavaMailSender emailSender;
 
 
-
-
     @Override
     public List<Livre> listeDeLivreDontLesExemplairesSontEnRetard() {
         List<Livre> livresEnRetard = proxyBatchToBack.listeDeLivreDontLesExemplairesSontEnRetard();
         return livresEnRetard;
     }
 
-        public List<Utilisateur> listUtilisateurEnRetard() {
+    public List<Utilisateur> listUtilisateurEnRetard() {
         List<Livre> livres = listeDeLivreDontLesExemplairesSontEnRetard();
         List<Utilisateur> utilisateursEnRetard = new ArrayList<>();
         for (Livre livre : livres) {
@@ -44,7 +42,7 @@ public class BatchServiceImpl implements BatchService {
         return utilisateursEnRetard;
     }
 
-        public List<Exemplaire> listExemplairesEnRetard() {
+    public List<Exemplaire> listExemplairesEnRetard() {
         List<Livre> livres = listeDeLivreDontLesExemplairesSontEnRetard();
         List<Exemplaire> ExemplairesEnRetard = new ArrayList<>();
         for (Livre livre : livres) {
@@ -54,30 +52,6 @@ public class BatchServiceImpl implements BatchService {
         }
         return ExemplairesEnRetard;
     }
-
-    //    @Override
-//    public List<Exemplaire> listeExemplairesEnRetard() {
-//        List<Exemplaire> exemplairesEnRetard = proxyBatchToBack.listeDesExemplairesEnRetard();
-//        return exemplairesEnRetard;
-//    }
-
-//    public List<Utilisateur> listUtilisateurEnRetard() {
-//        List<Exemplaire> exemplaires = listeExemplairesEnRetard();
-//        List<Utilisateur> utilisateursEnRetard = new ArrayList<>();
-//        for (Exemplaire exemplaire : exemplaires) {
-//            utilisateursEnRetard.add(exemplaire.getUtilisateur());
-//        }
-//        return utilisateursEnRetard;
-//    }
-//
-//    public List<Livre> listLivresEnRetard() {
-//        List<Exemplaire> exemplaires = listeExemplairesEnRetard();
-//        List<Livre> livreEnRetard = new ArrayList<>();
-//        for (Exemplaire exemplaire : exemplaires) {
-//            livreEnRetard.add(exemplaire.getLivre());
-//        }
-//        return livreEnRetard;
-//    }
 
 
     // creation sendmail dans service liste resa enretard et mail a tous els retardataire
@@ -95,8 +69,9 @@ public class BatchServiceImpl implements BatchService {
                 message.setText("Vous devez nous retourner votre exemplaire" + livre.getTitre() + " du livre emprunté à la bibliotheque votre temps d'emprunt est dépassée");
             }
             // Send Message!
-            this.emailSender.send(message);
+            emailSender.send(message);
         }
+
         return "Email Sent!";
 
     }

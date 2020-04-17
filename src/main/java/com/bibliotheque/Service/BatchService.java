@@ -16,14 +16,5 @@ public interface BatchService {
 
     List<Utilisateur> listUtilisateurEnRetard();
 
-
-//    List<Exemplaire> listeExemplairesEnRetard();
-//
-//    List<Utilisateur> listUtilisateurEnRetard();
-//
-//    List<Livre> listLivresEnRetard();
-
-
-
     String sendMaill();
-    }
+}
