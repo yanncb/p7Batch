@@ -42,16 +42,16 @@ public class BatchServiceImpl implements BatchService {
         return utilisateursEnRetard;
     }
 
-    public List<Exemplaire> listExemplairesEnRetard() {
-        List<Livre> livres = listeDeLivreDontLesExemplairesSontEnRetard();
-        List<Exemplaire> ExemplairesEnRetard = new ArrayList<>();
-        for (Livre livre : livres) {
-            for (Exemplaire exemplaire : livre.getExemplaireList()) {
-                ExemplairesEnRetard.add(exemplaire);
-            }
-        }
-        return ExemplairesEnRetard;
-    }
+//    public List<Exemplaire> listExemplairesEnRetard() {
+//        List<Livre> livres = listeDeLivreDontLesExemplairesSontEnRetard();
+//        List<Exemplaire> ExemplairesEnRetard = new ArrayList<>();
+//        for (Livre livre : livres) {
+//            for (Exemplaire exemplaire : livre.getExemplaireList()) {
+//                ExemplairesEnRetard.add(exemplaire);
+//            }
+//        }
+//        return ExemplairesEnRetard;
+//    }
 
 
     // creation sendmail dans service liste resa enretard et mail a tous els retardataire
